@@ -10,7 +10,7 @@ function solution() {
   let sieve = Array(sup + 2).fill(true);
   sieve[0] = false;
   sieve[1] = false;
-  let limit = Math.sqrt(sup + 1);
+  let limit = Math.ceil(Math.sqrt(sup + 1));
 
   for (let j = 4; j < sieve.length; j += 2) {
     sieve[j] = false;
