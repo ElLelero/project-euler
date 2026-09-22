@@ -7,7 +7,7 @@ function isPentagonal(n) {
   if (test < 0) return false;
   let root = Math.sqrt(test);
   if (root % 1 !== 0) return false;
-  return Math.floor(root+1) % 6 === 0;
+  return root % 6 === 5;
 }
 
 function solution() {
