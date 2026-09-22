@@ -1,14 +1,21 @@
 function primeFactorsOf(n) {
   let primeFactorsCount = 0;
-  let prime = 2;
-  while (prime * prime <= n && n > 1) {
-    if (n % prime === 0) {
-      primeFactorsCount++;
-      while (n % prime === 0) n /= prime;
-    }
-    prime++;
+  let divisor = 2;
+  if (n % divisor === 0) {
+    primeFactorsCount++;
+    while (n % divisor === 0) n /= divisor;
   }
-  if (n > 1) primeFactorsCount++;
+
+  divisor = 3;
+  while (divisor * divisor <= n) {
+    if (n % divisor === 0) {
+      primeFactorsCount++;
+      while (n % divisor === 0) n /= divisor;
+    }
+    divisor += 2;
+  }
+  
+  if (n > 1) primeFactorsCount++;//è primo
   return primeFactorsCount;
 }
 
